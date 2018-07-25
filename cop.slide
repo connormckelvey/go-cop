@@ -1,0 +1,85 @@
+I Love Go
+
+Connor McKelvey
+
+* Getting Started is Easy
+- No project file like package.json/project.clj/pom.xml 
+- No makefile required, go run main.go or go build/install ./...
+- Less boilerplate!
+- [[https://play.golang.org/]]
+- [[https://gobyexample.com/]]
+
+* Tooling
+- [[https://godoc.org/golang.org/x/tools]]
+- go build -race # go get -race golang.org/x/blog/support/racy && racy
+- gofmt for opinionated formatting
+- goimports handles auto importing, renaming and ordering
+- godoc for documentation: go doc io.Reader / go doc fsnotify
+- dep for versioning an managing dependencies dep ensure 
+- go generate # for generating go code with go and go template
+- present [[https://golang.org/x/tools/cmd/present]]
+
+* Project Design Conventions
+- Encourages Open Source and "Monorepos"
+- [[https://github.com/golang-standards/project-layout]]
+- [[https://github.com/sts-atlas/atlas2]]
+- A project can be a package repository
+- Example: [[https://github.com/sts-atlas/atlas2/blob/master/pkg/tablewriter/tablewriter.go]]
+- /pkg means please use me, /internal is forbidden by the compiler
+- [[https://dave.cheney.net/2016/08/20/solid-go-design]]
+
+* The Language is Alright
+- [[https://golang.org/doc/faq#Why_doesnt_Go_have_feature_X]]
+- [[https://learnxinyminutes.com/docs/go/]]
+- No Generics, Iterators, Exceptions, Assertions
+- Dev community is skeptical to new language features
+- The syntax is the least exciting part about go
+- But there is some cool stuff
+
+* Type System 
+- Composition and Methods on Named Types
+.code types/methods/main.go /STARTTYPES/,/ENDTYPES/
+
+* Iterating over Collections
+.code sugar/range/main.go /VARS/,/ENDVARS/
+
+* Range Example
+- range, can iterate over slices, arrays, maps, and channels
+- helpful syntax, "Syntactic Sugar"
+.play sugar/range/main.go /^func main/,/^}/
+
+* Concurrency and Channels
+- <- does many things:
+- Serves as visual aid, emphasizes direction
+- Can type a channel (as send/receive only)
+- Can send/receive messages to/from a channel, 
+- myChannel <- myMessage
+
+* Channel Example
+.play sugar/channel/main.go /^func main/,/^}/
+- helps make concurrent/async programs easier to read. 
+
+* Standard Library
+- [[https://golang.org/pkg/]]
+- Subrepo [[https://godoc.org/-/subrepo]]
+- Interface Based Sorting
+- Encoding/Decoding including JSON and XML with Marshal interface
+- HTML and Text Templating
+- Time Duration and Ticker Channel
+- No great enumerable library like Ruby / Elixir
+
+* The Development Experience
+- Great tooling + Simple language feels super productive
+- More time writing code, but also more code
+- Fast builds, cross-platform builds, and no runtime dependencies
+- Makes for faster test feedback, CI Builds and Smaller Docker images
+- Make's it easy for a team to build internal tooling right into a project
+
+.image https://i.chzbgr.com/full/5303798016/h40964C3C/ 
+
+ 
+
+
+
+
+
